@@ -208,11 +208,11 @@ if __name__ == '__main__':
     learnable_features = False
     is_transductive = False
     random_masking = True
-    mask_perc = [0.1, ]
-    noise_perc = [0.1, 0.2]
+    mask_perc = [0.75, ]
+    noise_perc = [0.0, ]
     seed = [0, ]
     num_splits = [20, ]
-    device_id = '2'
+    device_id = '0'
     # optimization hyperparameters
     learning_rate = 0.001
     weight_decay = 0.001
