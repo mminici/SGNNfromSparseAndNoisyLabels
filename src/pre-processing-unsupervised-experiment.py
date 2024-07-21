@@ -10,7 +10,7 @@ from data_processor import generate_train_val_test_masked_sets, convert_neg_labe
 from data_processor import parallel_get_data_for_triad_social_balance
 from torch_geometric_signed_directed.data import load_signed_real_data
 
-device_id = "3"
+device_id = "0"
 dataset_name = "bitcoin_alpha"
 seed = 0
 num_splits = 20
@@ -21,7 +21,7 @@ overwrite_data = False
 is_transductive = False
 random_masking = True
 filter_transitive = False
-noise_perc = 0.2
+noise_perc = 0.0
 
 # Preliminary operations
 device = torch.device("cuda" if torch.cuda.is_available() and device_id != "-1" else "cpu")

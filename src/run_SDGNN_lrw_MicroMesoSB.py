@@ -267,7 +267,6 @@ def run_experiment(dataset_name='wiki',
     # Simulation ended, report metrics on test set for the best model
     for metric_name in test_logger.test_metrics_dict:
         avg_val, std_val = test_logger.get_metric_stats(metric_name)
-        print(f'Test {metric_name}: {avg_val}+-{std_val}')
         mlflow.log_metric(metric_name + '_avg', avg_val)
         mlflow.log_metric(metric_name + '_std', std_val)
         np.save(file=interim_data_dir / f'test_{metric_name}', arr=np.array(test_logger.test_metrics_dict[metric_name]))
@@ -285,20 +284,20 @@ def run_experiment(dataset_name='wiki',
 
 if __name__ == '__main__':
     # Run input parameters
-    dataset_name = 'slashdot'
+    dataset_name = 'bitcoin_alpha'
     val_perc = 0.05
     test_perc = 0.05
     overwrite_data = False
     learnable_features = False
-    init_eps_one = False
+    init_eps_one = True
     is_transductive = False
     random_masking = True
     mask_perc = [0.75, ]
-    unlabeled_perc = [None, ]  # [0.5, 0.6, 0.7, 0.8, 0.9] # [None, 0.1, 0.2, 0.3, 0.4]
-    noise_perc = [0.25, ]
+    unlabeled_perc = [None, ]
+    noise_perc = [0.0, ]
     seed = [0, ]
     num_splits = [20, ]
-    device_id = '3'
+    device_id = '0'
     # optimization hyperparameters
     learning_rate = 0.001
     weight_decay = 0.001
