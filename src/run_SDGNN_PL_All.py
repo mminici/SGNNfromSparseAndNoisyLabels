@@ -293,7 +293,7 @@ def run_experiment(dataset_name='wiki',
 
 if __name__ == '__main__':
     # Run input parameters
-    dataset_name = 'slashdot'
+    dataset_name = 'bitcoin_alpha'
     val_perc = 0.05
     test_perc = 0.05
     overwrite_data = False
@@ -302,10 +302,10 @@ if __name__ == '__main__':
     random_masking = True
     mask_perc = [0.75, ]
     unlabeled_perc = [None, ]  # [0.5, 0.6, 0.7, 0.8, 0.9] # [None, 0.1, 0.2, 0.3, 0.4]
-    noise_perc = [0.1, 0.2]
+    noise_perc = [0.0, ]
     seed = [0, ]
     num_splits = [20, ]
-    device_id = '2'
+    device_id = '0'
     # optimization hyperparameters
     learning_rate = 0.001
     weight_decay = 0.001

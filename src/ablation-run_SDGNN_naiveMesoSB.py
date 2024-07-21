@@ -231,15 +231,15 @@ def run_experiment(dataset_name='wiki',
 
 if __name__ == '__main__':
     # Run input parameters
-    dataset_name = 'bitcoin_otc'
+    dataset_name = 'bitcoin_alpha'
     val_perc = 0.05
     test_perc = 0.05
     overwrite_data = False
     learnable_features = False
-    mask_perc = [0.01, 0.05, 0.1, 0.25, 0.5, ]
+    mask_perc = [0.75, ]
     seed = [0, ]
-    num_splits = [5, ]
-    device_id = '1'
+    num_splits = [20, ]
+    device_id = '0'
     # optimization hyperparameters
     learning_rate = 0.005
     weight_decay = 0.001
@@ -249,7 +249,7 @@ if __name__ == '__main__':
     # model hyperparameters
     latent_dim = 64
     num_layers = 2
-    metric_to_optimize = 'auc_score'
+    metric_to_optimize = 'f1_macro'
     for seed_val in seed:
         mlflow.set_experiment(f'{dataset_name}-SDGNN-{seed_val}')
         for mask_perc_val in mask_perc:

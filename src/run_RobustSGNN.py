@@ -240,7 +240,7 @@ def run_experiment(dataset_name='wiki',
 
 if __name__ == '__main__':
     # Run input parameters
-    dataset_name = 'wiki'
+    dataset_name = 'bitcoin_alpha'
     val_perc = 0.05
     test_perc = 0.05
     overwrite_data = False
@@ -248,10 +248,10 @@ if __name__ == '__main__':
     is_transductive = False
     random_masking = True
     mask_perc = [0.75, ]
-    noise_perc = [0.1, ]
+    noise_perc = [0.0, ]
     seed = [0, ]
     num_splits = [20, ]
-    device_id = '2'
+    device_id = '0'
     # optimization hyperparameters
     learning_rate = 0.001
     weight_decay = 0.001

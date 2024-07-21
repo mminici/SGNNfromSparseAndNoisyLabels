@@ -280,16 +280,16 @@ def run_experiment(dataset_name='wiki',
 
 if __name__ == '__main__':
     # Run input parameters
-    dataset_name = 'slashdot'
+    dataset_name = 'bitcoin_alpha'
     val_perc = 0.05
     test_perc = 0.05
     overwrite_data = False
     learnable_features = False
-    init_eps_one = False
+    init_eps_one = True
     is_transductive = False
     random_masking = True
     mask_perc = [0.75, ]
-    noise_perc = [0.2, ]
+    noise_perc = [0.0, ]
     unlabeled_perc = [None, ]
     seed = [0, ]
     num_splits = [20, ]
